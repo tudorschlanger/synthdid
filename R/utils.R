@@ -70,7 +70,7 @@ panel.matrices = function(panel, unit = 1, time = 2, outcome = 3, treatment = 4,
     stop("Missing values in `panel`.")
   }
   if (length(unique(panel[, treatment])) == 1) {
-    stop("There is no variation in treatment status.")
+    warning("There is no variation in treatment status.")
   }
   if (!all(panel[, treatment] %in% c(0, 1))) {
     stop("The treatment status should be in 0 or 1.")
